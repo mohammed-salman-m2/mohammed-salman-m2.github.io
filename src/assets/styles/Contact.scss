@@ -1,0 +1,69 @@
+:root {
+  --text-color-light:#333333; /* Darker text for light mode */
+  --text-color-dark: #FFD700; /* Lighter text for dark mode */
+}
+
+body[data-theme='dark'] {
+  --text-color: var(--text-color-dark);  /* Use lighter/golden color in dark mode */
+}
+
+body[data-theme='light'] {
+  --text-color: var(--text-color-light); /* Use darker color in light mode */
+}
+
+
+.contact_wrapper svg {
+  font-size: 1em;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.contact-form {
+  padding-top: 20px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #050f0b;
+  }
+
+  button:hover {
+    background-color: #009bca;
+    color: white;
+  }
+
+  fieldset {
+    padding: 10px; /* Optional: Add spacing */
+    border: 1px solid #40E0D0; /* Optional: Add a border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    background-color: transparent; /* Ensure no interference */
+  }
+}
+
+label, .MuiInputBase-input, .MuiInputLabel-root {
+  color: var(--text-color) !important; /* Apply dynamic text color based on mode */
+}
+
+label {
+  font-size: 1.2rem;
+  font-family: 'DomaineDispNar-Medium', sans-serif;
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
