@@ -1,13 +1,32 @@
+/* Global Styles */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in width/height */
+    overflow-x: hidden; /* Remove horizontal scroll */
+}
+
+/* Ensure all elements inside the body are responsive */
+* {
+    box-sizing: inherit;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* About Section Styles */
 .dark-mode .about-section {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
 .about-section {
     display: flex;
+    flex-wrap: wrap; /* Ensure items wrap when necessary */
     gap: 30px;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 100%; /* Ensure it takes full width */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
     padding: 0px 15%;
     min-height: 700px;
     background-image: url("../images/bg-dark.png");
@@ -20,6 +39,8 @@
 .about-section .content {
     text-align: left;
     z-index: 2;
+    flex: 1 1 60%; /* Allow content to grow and shrink */
+    padding: 10px;
 
     .social_icons {
         display: flex;
@@ -38,14 +59,21 @@
 
     p {
         font-size: 1.5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
+        margin-block-start: 0;
+        margin-block-end: 0;
     }
 
     h1 {
-        font-size: 5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
+        font-size: 10vw; /* Responsive font-size based on viewport width */
+        margin-block-start: 0;
+        margin-block-end: 0;
+        text-align: center;
+        color: #fff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+    }
+
+    .dark-mode h1 {
+        color: #fff;
     }
 }
 
@@ -54,102 +82,118 @@
     img {
         width: 150px;
         border-radius: 50%;
+        max-width: 100%; /* Ensure image is responsive */
     }
 }
 
+/* About Section Text */
 .about p {
     text-align: center;
     padding-top: 30%;
     padding-bottom: 30%;
 }
 
-@media screen {
-    @media (max-width: 567px) {
-        .nav-left{
-            padding-top: 20px;
-            float:left;
-        }
+/* Media Queries for Mobile Responsiveness */
 
-        .nav-left img {
-            height: 35px
-        }
+/* For screens max-width 768px (tablets and small screens) */
+@media (max-width: 768px) {
+    .about-section h1 {
+        font-size: 8vw; /* Adjust font size to fit smaller screens */
+        text-align: left;
+    }
 
-        .nav-right {
-            float:right;
-        }
+    .about-section p {
+        text-align: left;
+    }
 
-        .nav-right li {
-            padding: 10px 15px;
-            list-style:none;
-            font-size:13px;
-            color:white;
-            width: 10%;
-        }
+    .container {
+        display: initial;
+    }
 
-        .nav-right ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
+    .social_icons {
+        display: none !important;
+    }
 
-        body {
-            width: 100%;
-        }
+    .mobile_social_icons {
+        padding-top: 10px;
+        display: flex !important;
+        flex-direction: row;
+        gap: 10px;
+        color: white;
 
-        .about {
-            padding-left: 5%;
-            padding-right: 5%;
-            font-size: 12px;
+        svg {
+            font-size: 1.8em;
         }
     }
 
-    @media (max-width:768px) {
-        .about-section h1 {
-            font-size: 4em !important;
-            text-align: left;
-        }
+    .about-section {
+        padding-top: 150px;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-        .about-section p {
-            text-align: left;
-        }
+    .about-section .content {
+        width: 100%;
+        padding: 0;
+        flex: 1 1 100%; /* Content takes full width */
+    }
 
-        .container {
-            display: initial;
-        }
+    .about-section .image-wrapper {
+        width: 100%;
+        padding-left: 0;
+    }
+}
 
-        .social_icons {
-            display: none !important;
-        }
+/* For smaller screens max-width 567px (portrait mode on phones) */
+@media (max-width: 567px) {
+    .about-section {
+        padding: 10px; /* Add padding to fit content well */
+    }
 
-        .mobile_social_icons {
-            padding-top: 10px;
-            display: flex !important;
-            flex-direction: row;
-            gap: 10px;
-            color: white;
-    
-            svg {
-                font-size: 1.8em;
-            }
-        }
+    .about-section h1 {
+        font-size: 9vw; /* Adjust font-size for very small screens */
+        text-align: left; /* Align text to the left */
+    }
 
-        .about-section {
-            padding-top: 150px;
-            display: block;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
+    .about-section .content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
-        .about-section .content {
-            width: 90%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-bottom: 5%;
-        }
+    .about-section .image-wrapper {
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
 
-        .about-section .image-wrapper {
-            padding-left: 5%;
-            width: 100%;
-        }
+    .about-section .social_icons {
+        display: none;
+    }
+
+    .mobile_social_icons {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
+        color: white;
+    }
+}
+
+/* Additional Fixes for Layout Overflow */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+body, .container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+/* For Larger Screens (over 1024px) */
+@media (max-width: 1024px) {
+    .about-section {
+        justify-content: center; /* Center content horizontally */
     }
 }
