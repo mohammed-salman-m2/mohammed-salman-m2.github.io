@@ -9,7 +9,7 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src="https://scontent.fccj2-1.fna.fbcdn.net/v/t39.30808-1/475296715_644624431436694_3817992111451528103_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=1d2534&_nc_ohc=wxIhoJXmEm0Q7kNvgHBI99F&_nc_zt=24&_nc_ht=scontent.fccj2-1.fna&_nc_gid=A4Jwp-IXEZ2tRQ_a0yOpbjr&oh=00_AYDFfEkZ2qkukFljity-Txofhs-8LcF03BQ4uA7eGxfATg&oe=679C33C3" alt="Avatar" />
+          <img src="https://scontent.fccj2-1.fna.fbcdn.net/v/t39.30808-1/475296715_644624431436694_3817992111451528103_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=1d2534&_nc_ohc=sFx9mQvCtoUQ7kNvgFlBmdj&_nc_oc=AdiFEA61YODvz8Cm82Glj6s4BXS6P1t9WQpyA1byAhPFGs1smSMM6bJxgQReN4WxyekScI-tSVRbIh4k3a5RkEsF&_nc_zt=24&_nc_ht=scontent.fccj2-1.fna&_nc_gid=ALwycjIKojJvRSkpT6aYIBz&oh=00_AYAdNucljlmmT2jGOMM6ClfNP7DZV_ElLJ_lpv67BGopjg&oe=67B29D43" alt="Avatar" />
         </div>
         <div className="content">
           <div className="social_icons">
